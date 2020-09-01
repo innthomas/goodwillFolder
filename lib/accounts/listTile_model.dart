@@ -26,6 +26,8 @@ class _MyListTileState extends State<MyListTile> {
                   fontWeight: FontWeight.bold, color: Colors.red[900]),
             ),
             onPressed: () {
+              Scaffold.of(context).showSnackBar(
+                  SnackBar(content: Text('withdrawal...new bal: N69,000')));
               Navigator.of(context).pop();
             },
           ),
@@ -42,6 +44,8 @@ class _MyListTileState extends State<MyListTile> {
               ),
             ),
             onPressed: () {
+              Scaffold.of(context).showSnackBar(
+                  SnackBar(content: Text('deposit...new bal: N69,000')));
               Navigator.of(context).pop();
             },
           )

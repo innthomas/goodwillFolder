@@ -17,7 +17,7 @@ class MyDrawerPage extends StatelessWidget {
             backgroundColor: Colors.black,
             foregroundColor: Colors.white,
             radius: 100,
-            backgroundImage: AssetImage('assets/icons/inn4.jpeg'),
+            backgroundImage: AssetImage('icons/inn4.jpeg'),
           ),
           Card(
             elevation: 30.0,

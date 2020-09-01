@@ -37,74 +37,81 @@ class MyCustomFormState extends State<MyCustomForm> {
     // Build a Form widget using the _formKey created above.
     return Form(
       key: _formKey,
-      child: Container(
-        height: 700,
-        width: 400,
-        margin: EdgeInsets.fromLTRB(20.0, 90.0, 20.0, 30.0),
-        decoration: BoxDecoration(color: Colors.yellow[200]),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(28.0),
-              child: TextFormField(
-                decoration: InputDecoration(hintText: 'Innocent Thomas'),
-                keyboardType: TextInputType.name,
-                focusNode: FocusNode(),
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return 'Please enter name';
-                  }
-                  return null;
-                },
+      child: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Container(
+          height: 700,
+          width: 400,
+          decoration: BoxDecoration(color: Colors.yellow[200]),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.fromLTRB(9.0, 9.0, 9.0, 9.0),
+                child: TextFormField(
+                  decoration: InputDecoration(hintText: 'Innocent Thomas'),
+                  keyboardType: TextInputType.name,
+                  focusNode: FocusNode(),
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return 'Please enter name';
+                    }
+                    return null;
+                  },
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(28.0),
-              child: TextFormField(
-                decoration: InputDecoration(hintText: '1001'),
-                keyboardType: TextInputType.number,
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return 'Please enter account number';
-                  }
-                  return null;
-                },
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  maxLength: 4,
+                  decoration: InputDecoration(
+                      hintText: '1001',
+                      contentPadding: EdgeInsets.symmetric(horizontal: 40.0)),
+                  keyboardType: TextInputType.number,
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return 'Please enter account number';
+                    }
+                    return null;
+                  },
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(28.0),
-              child: TextFormField(
-                decoration: InputDecoration(hintText: '08036184619'),
-                keyboardType: TextInputType.number,
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return 'Please enter phone number';
-                  }
-                  return null;
-                },
+              Padding(
+                padding: const EdgeInsets.all(28.0),
+                child: TextFormField(
+                  maxLength: 11,
+                  decoration: InputDecoration(hintText: '08036184619'),
+                  keyboardType: TextInputType.number,
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return 'Please enter phone number';
+                    }
+                    return null;
+                  },
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(30),
-              child: RaisedButton(
-                textColor: Colors.blueGrey[600],
-                highlightElevation: 20.0,
-                elevation: 20.0,
-                splashColor: Colors.greenAccent,
-                onPressed: () {
-                  // Validate returns true if the form is valid, or false
-                  // otherwise.
-                  if (_formKey.currentState.validate()) {
-                    // If the form is valid, display a Snackbar.
-                    Scaffold.of(context).showSnackBar(
-                        SnackBar(content: Text('Processing Data')));
-                  }
-                },
-                child: Text('Submit'),
+              Padding(
+                padding: const EdgeInsets.all(30),
+                child: RaisedButton(
+                  textColor: Colors.blueGrey[600],
+                  highlightElevation: 20.0,
+                  elevation: 20.0,
+                  splashColor: Colors.greenAccent,
+                  onPressed: () {
+                    // Validate returns true if the form is valid, or false
+                    // otherwise.
+                    if (_formKey.currentState.validate()) {
+                      // If the form is valid, display a Snackbar.
+                      Scaffold.of(context).showSnackBar(SnackBar(
+                          content:
+                              Text('new account {John Doe: 1904} created')));
+                    }
+                  },
+                  child: Text('Submit'),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
