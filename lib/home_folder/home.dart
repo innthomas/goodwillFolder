@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thriftApp/accounts/new_account.dart';
+import 'package:thriftApp/home_folder/fab.dart';
 import '../accounts/accounts.dart';
 import 'my_drawer.dart';
 
@@ -23,12 +24,13 @@ class _MyHomePageState extends State<MyHomePage> {
         elevation: 15.0,
         actions: <Widget>[
           IconButton(
-              icon: Icon(
-                Icons.search_outlined,
-                size: 40.0,
-                color: Colors.white,
-              ),
-              onPressed: null),
+            icon: Icon(
+              Icons.arrow_drop_down_circle_outlined,
+              size: 40.0,
+              color: Colors.white,
+            ),
+            onPressed: null,
+          ),
           SizedBox(
             width: 25.0,
           )
@@ -182,6 +184,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
+      floatingActionButton: Fab(),
     );
   }
 }

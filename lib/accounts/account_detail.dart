@@ -16,6 +16,14 @@ class _AccountdetailState extends State<Accountdetail> {
       body: ListView(
         padding: EdgeInsets.all(20.0),
         children: <Widget>[
+          Text(
+            "Statement of Account",
+            style: TextStyle(
+              fontFamily: "Pacifico",
+              fontSize: 20.0,
+              color: Colors.green[800],
+            ),
+          ),
           Text("day 1  -- 1000"),
           Text("day 2  -- 1000"),
           Text("day 3  -- 1000"),

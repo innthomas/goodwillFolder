@@ -106,6 +106,7 @@ class MyCustomFormState extends State<MyCustomForm> {
                           content:
                               Text('new account {John Doe: 1904} created')));
                     }
+                    //Navigator.pop(context);
                   },
                   child: Text('Submit'),
                 ),
